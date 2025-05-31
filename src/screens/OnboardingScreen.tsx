@@ -13,6 +13,7 @@ import {
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import * as ImagePicker from 'expo-image-picker';
+import * as Notifications from 'expo-notifications';
 import { useNavigation, CommonActions } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
 import { useProfile } from '../context/ProfileContext';
@@ -22,6 +23,11 @@ import { RootStackParamList } from '../types/navigation';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useUser } from '../context/UserContext';
 import { GradeLevel, UserProfile } from '../types';
+import {
+    scheduleDailyReminder,
+    scheduleWeeklyReport,
+    scheduleStudyTimeReminder,
+} from '../utils/notifications';
 
 const { width } = Dimensions.get('window');
 
@@ -165,6 +171,26 @@ const OnboardingScreen = () => {
                 if (!grade) {
                     Alert.alert('Hata', 'Lütfen sınıfınızı seçin');
                     return;
+                }
+
+                // Request notification permissions
+                const { status } = await Notifications.requestPermissionsAsync();
+
+                // Save default notification settings
+                const defaultSettings = {
+                    dailyReminder: true,
+                    weeklyReport: true,
+                    studyTimeReminder: true,
+                    dailyReminderTime: '09:00',
+                    studyReminderTime: '14:00',
+                };
+                await AsyncStorage.setItem('notificationSettings', JSON.stringify(defaultSettings));
+
+                // If permissions granted, schedule notifications
+                if (status === 'granted') {
+                    await scheduleDailyReminder(9, 0); // 09:00
+                    await scheduleWeeklyReport(); // Pazar 20:00
+                    await scheduleStudyTimeReminder(14, 0); // 14:00
                 }
 
                 // Create and save the profile

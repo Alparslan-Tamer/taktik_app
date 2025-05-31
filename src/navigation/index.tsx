@@ -6,7 +6,7 @@ import { SettingsScreen } from '@screens/SettingsScreen';
 import { StudyPlanScreen } from '@screens/StudyPlanScreen';
 import OnboardingScreen from '@screens/OnboardingScreen';
 import { EditProfileScreen } from '@screens/EditProfileScreen';
-import { NotificationScreen } from '@screens/NotificationScreen';
+import NotificationScreen from '@screens/NotificationScreen';
 import { ProfileProvider } from '../context/ProfileContext';
 import { PrivacyScreen } from '../screens/PrivacyScreen';
 import { AboutScreen } from '../screens/AboutScreen';

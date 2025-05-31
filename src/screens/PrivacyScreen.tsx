@@ -4,14 +4,14 @@ import {
     Text,
     StyleSheet,
     ScrollView,
-    SafeAreaView,
-    StatusBar,
     TouchableOpacity,
+    SafeAreaView,
+    StatusBar
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
-import { COLORS, SIZES, FONTS, SHADOWS } from '../constants/theme';
+import { COLORS, FONTS, SIZES, SHADOWS } from '../constants/theme';
 import { Card } from '../components/Card';
 
 export const PrivacyScreen = () => {
@@ -46,52 +46,41 @@ export const PrivacyScreen = () => {
             >
                 <Card style={styles.section}>
                     <Text style={styles.sectionTitle}>Veri Kullanımı</Text>
-                    <Text style={styles.text}>
-                        Taktik uygulaması, size en iyi deneyimi sunmak için bazı kişisel verilerinizi toplar ve kullanır.
-                        Bu veriler şunları içerir:
+                    <Text style={styles.sectionText}>
+                        Taktik uygulaması, yalnızca çalışma hedeflerinizi ve ilerlemenizi takip etmek için gerekli olan kişisel bilgileri toplar. Bu bilgiler:
                     </Text>
                     <View style={styles.bulletPoints}>
-                        <Text style={styles.bulletPoint}>• İsim ve sınıf bilgileriniz</Text>
-                        <Text style={styles.bulletPoint}>• Çalışma hedefleriniz ve ilerlemeniz</Text>
-                        <Text style={styles.bulletPoint}>• Profil fotoğrafınız (isteğe bağlı)</Text>
+                        <Text style={styles.bulletPoint}>• İsim ve sınıf bilgisi</Text>
+                        <Text style={styles.bulletPoint}>• Profil fotoğrafı (isteğe bağlı)</Text>
+                        <Text style={styles.bulletPoint}>• Çalışma hedefleri ve istatistikleri</Text>
                     </View>
                 </Card>
 
                 <Card style={styles.section}>
-                    <Text style={styles.sectionTitle}>Veri Saklama</Text>
-                    <Text style={styles.text}>
-                        Tüm verileriniz yalnızca cihazınızda yerel olarak saklanır. Verileriniz:
+                    <Text style={styles.sectionTitle}>Veri Depolama</Text>
+                    <Text style={styles.sectionText}>
+                        Tüm verileriniz yalnızca cihazınızda yerel olarak saklanır. Verileriniz herhangi bir sunucuya gönderilmez veya üçüncü taraflarla paylaşılmaz.
                     </Text>
-                    <View style={styles.bulletPoints}>
-                        <Text style={styles.bulletPoint}>• Herhangi bir sunucuya gönderilmez</Text>
-                        <Text style={styles.bulletPoint}>• Üçüncü taraflarla paylaşılmaz</Text>
-                        <Text style={styles.bulletPoint}>• Yalnızca uygulama içi deneyiminizi iyileştirmek için kullanılır</Text>
-                    </View>
                 </Card>
 
                 <Card style={styles.section}>
-                    <Text style={styles.sectionTitle}>Verilerinizin Kontrolü</Text>
-                    <Text style={styles.text}>
-                        Verileriniz üzerinde tam kontrole sahipsiniz:
+                    <Text style={styles.sectionTitle}>Verileriniz Üzerinde Kontrol</Text>
+                    <Text style={styles.sectionText}>
+                        Dilediğiniz zaman profilinizi silebilir ve tüm verilerinizi temizleyebilirsiniz. Profil silme işlemi geri alınamaz ve tüm çalışma verileriniz kalıcı olarak silinir.
                     </Text>
-                    <View style={styles.bulletPoints}>
-                        <Text style={styles.bulletPoint}>• İstediğiniz zaman profilinizi silebilirsiniz</Text>
-                        <Text style={styles.bulletPoint}>• Tüm çalışma verilerinizi temizleyebilirsiniz</Text>
-                        <Text style={styles.bulletPoint}>• Profil fotoğrafınızı değiştirebilir veya kaldırabilirsiniz</Text>
-                    </View>
                 </Card>
 
                 <Card style={styles.section}>
                     <Text style={styles.sectionTitle}>İzinler</Text>
-                    <Text style={styles.text}>
-                        Uygulama aşağıdaki izinleri kullanabilir:
+                    <Text style={styles.sectionText}>
+                        Uygulama aşağıdaki izinleri isteyebilir:
                     </Text>
                     <View style={styles.bulletPoints}>
                         <Text style={styles.bulletPoint}>• Fotoğraf galerisi (profil fotoğrafı için)</Text>
-                        <Text style={styles.bulletPoint}>• Bildirimler (çalışma hatırlatmaları için)</Text>
+                        <Text style={styles.bulletPoint}>• Bildirimler (hatırlatıcılar için)</Text>
                     </View>
-                    <Text style={styles.text}>
-                        Bu izinleri istediğiniz zaman cihaz ayarlarınızdan değiştirebilirsiniz.
+                    <Text style={styles.sectionText}>
+                        Bu izinleri cihaz ayarlarından istediğiniz zaman değiştirebilirsiniz.
                     </Text>
                 </Card>
             </ScrollView>
@@ -107,9 +96,7 @@ const styles = StyleSheet.create({
     header: {
         padding: SIZES.padding,
         paddingTop: SIZES.padding * 2,
-        paddingBottom: SIZES.padding * 2,
-        borderBottomLeftRadius: 30,
-        borderBottomRightRadius: 30,
+        paddingBottom: SIZES.padding * 2.5,
     },
     headerContent: {
         flexDirection: 'row',
@@ -131,34 +118,35 @@ const styles = StyleSheet.create({
     },
     content: {
         flex: 1,
-        marginTop: -20,
+        marginTop: -30,
         backgroundColor: COLORS.background,
+        borderTopLeftRadius: 30,
+        borderTopRightRadius: 30,
     },
     scrollContent: {
-        padding: SIZES.padding,
         paddingBottom: SIZES.padding * 2,
     },
     section: {
-        marginBottom: SIZES.padding,
         padding: SIZES.padding,
+        marginBottom: SIZES.padding,
     },
     sectionTitle: {
-        ...FONTS.h3,
+        ...FONTS.h4,
         color: COLORS.text,
         marginBottom: SIZES.base,
     },
-    text: {
-        ...FONTS.body2,
+    sectionText: {
+        ...FONTS.body3,
         color: COLORS.textSecondary,
-        marginBottom: SIZES.base,
+        marginBottom: SIZES.padding,
     },
     bulletPoints: {
         marginTop: SIZES.base,
-        marginLeft: SIZES.base,
+        marginBottom: SIZES.padding,
     },
     bulletPoint: {
-        ...FONTS.body2,
+        ...FONTS.body3,
         color: COLORS.textSecondary,
-        marginBottom: SIZES.base / 2,
+        marginBottom: SIZES.base,
     },
 }); 

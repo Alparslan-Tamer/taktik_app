@@ -10,7 +10,7 @@ export type RootStackParamList = {
     Onboarding: undefined;
     Main: undefined;
     StudyLog: undefined;
-    StudyPlan: { selectedDate: string };
+    StudyPlan: { selectedDate?: string };
     Settings: undefined;
     EditProfile: undefined;
     Notification: undefined;
