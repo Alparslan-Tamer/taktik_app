@@ -30,11 +30,24 @@ export const ProfileProvider: React.FC<{ children: React.ReactNode }> = ({ child
 
     const loadProfile = async () => {
         try {
+            // First try to load from activeProfile
+            const activeProfile = await AsyncStorage.getItem('activeProfile');
+            if (activeProfile) {
+                const parsedProfile = JSON.parse(activeProfile);
+                setProfile(parsedProfile);
+                // Also save to userProfile for backwards compatibility
+                await AsyncStorage.setItem('userProfile', activeProfile);
+                setLoading(false);
+                return;
+            }
+
+            // If no activeProfile, try legacy userProfile
             const savedProfile = await AsyncStorage.getItem('userProfile');
             if (savedProfile) {
                 const parsedProfile = JSON.parse(savedProfile);
                 setProfile(parsedProfile);
-                // scheduleDailyReminder(parsedProfile.name); // Removed to prevent notification on first app open
+                // Migrate to activeProfile
+                await AsyncStorage.setItem('activeProfile', savedProfile);
             }
         } catch (error) {
             console.error('Error loading profile:', error);
@@ -46,6 +59,8 @@ export const ProfileProvider: React.FC<{ children: React.ReactNode }> = ({ child
     const updateProfile = async (updates: Partial<UserProfile>) => {
         try {
             const updatedProfile = profile ? { ...profile, ...updates } : updates as UserProfile;
+            // Update both storage locations
+            await AsyncStorage.setItem('activeProfile', JSON.stringify(updatedProfile));
             await AsyncStorage.setItem('userProfile', JSON.stringify(updatedProfile));
             setProfile(updatedProfile);
         } catch (error) {

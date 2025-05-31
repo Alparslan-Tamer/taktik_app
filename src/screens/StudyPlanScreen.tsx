@@ -27,10 +27,13 @@ import { Button } from '../components/Button';
 import { ProgressBar } from '../components/ProgressBar';
 import { BottomTabBar } from '../components/BottomTabBar';
 import { useProfile } from '../context/ProfileContext';
+import { BottomTabScreen } from '../screens/SettingsScreen';
 
 type RootStackParamList = {
     Main: undefined;
     StudyPlan: { selectedDate?: string };
+    StudyLog: undefined;
+    Settings: undefined;
 };
 
 type StudyPlanScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, 'StudyPlan'>;
@@ -463,7 +466,13 @@ export const StudyPlanScreen = () => {
                 </View>
             </Modal>
 
-            <BottomTabBar activeScreen="StudyPlan" onTabPress={(screen) => navigation.navigate(screen as never)} />
+            <BottomTabBar
+                activeScreen="StudyPlan"
+                onTabPress={(screen: BottomTabScreen) => {
+                    if (screen === 'StudyPlan') return;
+                    navigation.navigate(screen);
+                }}
+            />
         </SafeAreaView>
     );
 };

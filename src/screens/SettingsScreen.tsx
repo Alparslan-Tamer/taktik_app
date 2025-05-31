@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
     View,
     Text,
@@ -10,7 +10,9 @@ import {
     Image,
     Alert,
     Platform,
-    ActivityIndicator
+    ActivityIndicator,
+    Linking,
+    Share
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
@@ -30,19 +32,28 @@ import { UserProfile } from '../types';
 type SettingsScreenNavigationProp = NativeStackNavigationProp<RootStackParamList>;
 
 // Export BottomTabScreen so it can be used in other files
-export type BottomTabScreen = 'Main' | 'StudyLog' | 'Settings';
+export type BottomTabScreen = 'Main' | 'StudyLog' | 'Settings' | 'StudyPlan';
 
 Notifications.setNotificationHandler({
     handleNotification: async () => ({
         shouldShowAlert: true,
         shouldPlaySound: true,
         shouldSetBadge: true,
+        shouldShowBanner: true,
+        shouldShowList: true,
     }),
 });
 
 export const SettingsScreen = () => {
     const navigation = useNavigation<SettingsScreenNavigationProp>();
     const { profile, loading } = useProfile();
+    const [profilePhoto, setProfilePhoto] = useState<string | undefined>();
+
+    useEffect(() => {
+        if (profile) {
+            setProfilePhoto(profile.photoUri || profile.photo);
+        }
+    }, [profile]);
 
     if (loading) {
         return (
@@ -77,7 +88,11 @@ export const SettingsScreen = () => {
 
     const handleTabPress = (screen: BottomTabScreen) => {
         if (screen === 'Settings') return;
-        navigation.navigate(screen);
+        if (screen === 'StudyPlan') {
+            navigation.navigate('StudyPlan', { selectedDate: new Date().toISOString() });
+        } else {
+            navigation.navigate(screen);
+        }
     };
 
     const renderSettingItem = (
@@ -120,8 +135,12 @@ export const SettingsScreen = () => {
             >
                 <Card style={styles.profileCard}>
                     <View style={styles.profileHeader}>
-                        {profile?.photoUri || profile?.photo ? (
-                            <Image source={{ uri: profile?.photoUri || profile?.photo }} style={styles.profilePhoto} />
+                        {profilePhoto ? (
+                            <Image
+                                source={{ uri: profilePhoto }}
+                                style={styles.profilePhoto}
+                                onError={() => setProfilePhoto(undefined)}
+                            />
                         ) : (
                             <View style={styles.photoPlaceholder}>
                                 <Ionicons name="person" size={40} color={COLORS.primary} />
@@ -138,14 +157,21 @@ export const SettingsScreen = () => {
                     <Text style={styles.groupTitle}>Hesap</Text>
                     {renderSettingItem('person-outline', 'Profili Düzenle', handleEditProfile)}
                     {renderSettingItem('notifications-outline', 'Bildirimler', handleNotifications)}
-                    {renderSettingItem('lock-closed-outline', 'Gizlilik', () => { }, false)}
+                    {renderSettingItem('lock-closed-outline', 'Gizlilik', () => navigation.navigate('Privacy'), false)}
                 </View>
 
                 <View style={styles.settingsGroup}>
                     <Text style={styles.groupTitle}>Uygulama</Text>
-                    {renderSettingItem('information-circle-outline', 'Hakkında', () => { })}
-                    {renderSettingItem('star-outline', 'Uygulamayı Değerlendir', () => { })}
-                    {renderSettingItem('share-outline', 'Arkadaşlarına Öner', () => { }, false)}
+                    {renderSettingItem('information-circle-outline', 'Hakkında', () => navigation.navigate('About'))}
+                    {renderSettingItem('star-outline', 'Uygulamayı Değerlendir', () => {
+                        Linking.openURL('https://apps.apple.com/app/your-app-id');
+                    })}
+                    {renderSettingItem('share-outline', 'Arkadaşlarına Öner', () => {
+                        Share.share({
+                            message: 'Taktik uygulamasını deneyin! Çalışmalarınızı planlayın ve hedeflerinize ulaşın.',
+                            url: 'https://apps.apple.com/app/your-app-id',
+                        });
+                    }, false)}
                 </View>
 
                 <TouchableOpacity style={styles.logoutButton} onPress={handleLogout}>

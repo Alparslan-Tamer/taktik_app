@@ -14,6 +14,10 @@ export type RootStackParamList = {
     Settings: undefined;
     EditProfile: undefined;
     Notification: undefined;
+    Privacy: undefined;
+    About: undefined;
+    RateApp: undefined;
+    ShareApp: undefined;
 };
 
 declare global {

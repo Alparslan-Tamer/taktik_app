@@ -253,8 +253,8 @@ const OnboardingScreen = () => {
                     {profiles.map((existingProfile, index) => (
                         <View key={index} style={styles.existingProfileCard}>
                             <View style={styles.profileInfo}>
-                                {existingProfile.photo ? (
-                                    <Image source={{ uri: existingProfile.photo }} style={styles.profilePhoto} />
+                                {existingProfile.photoUri || existingProfile.photo ? (
+                                    <Image source={{ uri: existingProfile.photoUri || existingProfile.photo }} style={styles.profilePhoto} />
                                 ) : (
                                     <View style={styles.photoPlaceholder}>
                                         <Ionicons name="person" size={40} color={COLORS.primary} />
