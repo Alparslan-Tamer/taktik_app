@@ -1,0 +1,297 @@
+{
+    "5": {
+        "Türkçe": [
+            "Sözcükte Anlam",
+            "Gerçek Mecaz ve Terim Anlamlı Sözcükler",
+            "Eş ve Zıt Anlamlı Sözcükler",
+            "Cümlede Anlam",
+            "Deyimler ve Atasözleri",
+            "Paragrafta Anlam",
+            "Ses Bilgisi",
+            "Yazım Kuralları",
+            "Noktalama İşaretleri",
+            "Kök ve Ekler",
+            "Yapım Ekleri",
+            "Edebi Türler ve Söz Sanatları"
+        ],
+        "Matematik": [
+            "Doğal Sayılar",
+            "Doğal Sayılarda İşlemler",
+            "Kesirler",
+            "Kesirlerde İşlemler",
+            "Ondalık Gösterim",
+            "Ondalık Gösterimde İşlemler",
+            "Yüzdeler",
+            "Temel Geometrik Kavramlar ve Çizimler",
+            "Üçgen ve Dörtgenler",
+            "Veri İşlemi",
+            "Uzunluk ve Zaman Ölçme",
+            "Alan Ölçme",
+            "Geometrik Cisimler"
+        ],
+        "Fen Bilimleri": [
+            "Gökyüzündeki Komşularımız ve Biz",
+            "Kuvveti Tanıyalım",
+            "Canlıların Yapısına Yolculuk",
+            "Işığın Dünyası",
+            "Maddenin Doğası",
+            "Isı ve Sıcaklım",
+            "Yaşamımızdaki Elektrik",
+            "Sürdürülebilir Yaşam ve Dönüşüm"
+        ],
+        "Sosyal Bilgiler": [
+            "Birlikte Yaşamak",
+            "Evimiz Dünya",
+            "Ortak Mirasımız",
+            "Yaşayan Demokrasimiz",
+            "Hayatımızdaki Ekonomi",
+            "Teknoloji ve Sosyal Bilgiler"
+        ],
+        "Din Kültürü ve Ahlak Bilgisi": [
+            "Allah İnancı",
+            "Ramazan ve Oruç",
+            "Adap ve Nezaket",
+            "Hz. Muhammed(s.a.v) ve Aile Hayatı",
+            "Çevremizde Dinin İzleri"
+        ],
+        "Yabancı Dil": [
+            "Hello!",
+            "My Town",
+            "Games and Hobbies",
+            "My Daily Routines",
+            "Health",
+            "Movies",
+            "Party Time",
+            "Fitness",
+            "The Animal Shelter",
+            "Festivals"
+        ]
+    },
+    "6": {
+        "Türkçe": [
+            "Sözcükte Anlam",
+            "Cümlede Anlam",
+            "Paragrafta Anlam",
+            "Sözcükte Yapı",
+            "Kök ve Ekler",
+            "Ad(İsim)",
+            "Sıfatlar",
+            "Zamirler",
+            "Edat Bağlaç Ünlem",
+            "Noktalama İşaretleri",
+            "Yazım Kuralları",
+            "Edabi Türler ve Söz Sanatları"
+        ],
+        "Matematik": [
+            "Üslü Sayılar",
+            "Doğal Sayı Problemleri",
+            "Çarpanlar ve Katlar",
+            "Bölünebilme Kuralları",
+            "Asal Sayılar",
+            "Kümeler",
+            "Tam Sayılar",
+            "Kesirler",
+            "Doğal Sayılarda İşlemler",
+            "Kesirlerle İşlemler",
+            "Kesir Problemleri",
+            "Ondalık Gösterim",
+            "Oran",
+            "Cebirsel İfadeler",
+            "Veri Analizi",
+            "Açılar",
+            "Alan Ölçme",
+            "Çember",
+            "Geometrik Cisimler",
+            "Sıvı Ölçme"
+        ],
+        "Fen Bilimleri": [
+            "Güneş Sistemi ve Tutulmalar",
+            "Vücudumuzdaki Sistemler",
+            "Kuvvet ve Hareket",
+            "Madde ve Isı",
+            "Maddenin Tanecikli Yapısı",
+            "Ses ve Özellikleri",
+            "Vücudumuzdaki Sistemler ve Sağlığı",
+            "Elektriğin İletimi"
+        ],
+        "Sosyal Bilgiler": [
+            "Birey ve Toplum",
+            "Kültür ve Miras",
+            "İnsanlar Yerler ve Çevreler",
+            "Bilim Teknoloji ve Toplum",
+            "Üretim Dağıtım ve Tüketim",
+            "Etkin Vatandaşlık",
+            "Küresel Bağlantılar"
+        ],
+        "Din Kültürü ve Ahlak Bilgisi": [
+            "Peygamber ve İlahi Kitap İnancı",
+            "Namaz",
+            "Zararlı Alışkanlıklar",
+            "Hz. Muhammed(s.a.v) Hayatı",
+            "Temel Değerlerimiz"
+        ],
+        "Yabancı Dil": [
+            "Life",
+            "Yummy Breakfast",
+            "Downtown",
+            "Weather and Emotions",
+            "At The Fair",
+            "Occupations",
+            "Holidays",
+            "Bookworms",
+            "Saving The Planet",
+            "Democracy"
+        ]
+    },
+    "7": {
+        "Türkçe": [
+            "Fiiller",
+            "Zarflar",
+            "Ek Fiiller",
+            "Cümlede Anlam",
+            "Deyimler ve Atasözleri",
+            "Paragrafta Anlam",
+            "Yazım Kuralları",
+            "Noktalama İşaretleri",
+            "Edebi Türler ve Söz Sanatları"
+        ],
+        "Matematik": [
+            "Tam Sayılarla İşlemler",
+            "Tam Sayılarla Problemler",
+            "Rasyonel Sayılar",
+            "Rasyonel Sayılarla İşlemler",
+            "Rasyonel Sayılarla Problemler",
+            "Cebirsel İfadeler",
+            "Eşitlik ve Denklem",
+            "Eşitlik ve Denklem Problemleri",
+            "Oran ve Orantı",
+            "Yüzdeler",
+            "Yüzde Problemleri",
+            "Doğrular ve Açılar",
+            "Çokgenler",
+            "Çember ve Daire",
+            "Veri Analizi",
+            "Cisimlerin Farklı Yönlerden Görünümleri"
+        ],
+        "Fen Bilimleri": [
+            "Güneş Sistemi ve Ötesi",
+            "Hücre Ve Bölünmeler",
+            "Kuvvet ve Enerji",
+            "Saf Madde ve Karışımlar",
+            "Işığın Madde ile Etkileşimi",
+            "Canlılarda Üreme Büyüme ve Gelişim",
+            "Elektirik Devreleri"
+        ],
+        "Sosyal Bilgiler": [
+            "Birey ve Toplum",
+            "Kültür ve Miras",
+            "İnsanlar Yerler ve Çevreler",
+            "Bilim Teknoloji ve Toplum",
+            "Üretim Dağıtım ve Tüketim",
+            "Etkin Vatandaşlık",
+            "Küresel Bağlantılar"
+        ],
+        "Din Kültürü ve Ahlak Bilgisi": [
+            "Melek ve Ahiret İnancı",
+            "Hac ve Kurban",
+            "Ahlaki Davranışlar",
+            "Allah'ın Kulu ve Elçisi Hz. Muhammed(s.a.v)",
+            "İslam Düşüncesi Yorumlar"
+        ],
+        "Yabancı Dil": [
+            "Appearance and Personality",
+            "Sports",
+            "Biographies",
+            "Wild Animals",
+            "Televisions",
+            "Celebrations",
+            "Dreams",
+            "Public Buildings",
+            "Environment",
+            "Planets"
+        ]
+    },
+    "8": {
+        "Türkçe": [
+            "Sözcükte Anlam",
+            "Cümlede Anlam",
+            "Deyimler ve Atasözleri",
+            "Paragrafta Anlam",
+            "Fiilimsiler",
+            "Cümlenin Öğeleri",
+            "Fiilde Çatı",
+            "Cümle Çeşitleri",
+            "Yazım Kuralları",
+            "Noktalama İşaretleri",
+            "Anlatım Bozuklukları",
+            "Edebi Türler ve Söz Sanatları"
+        ],
+        "Matematik": [
+            "Çarpanlar ve Katlar",
+            "Üslü İfadeler",
+            "Kareköklü İfadeler",
+            "Kareköklü İfadelerle İşlemler",
+            "Veri Analizi",
+            "Olasılık",
+            "Cebirsel İfadeler ve Özdeşlikler",
+            "Doğrusal Denklemeler",
+            "Eşitsizlikler",
+            "Üçgenler",
+            "Eşlik ve Benzerlik",
+            "Dönüşüm Geometrisi",
+            "Geometrik Cisimler"
+        ],
+        "Fen Bilimleri": [
+            "Mevsimler ve İklim",
+            "DNA ve Genetik Kod",
+            "Basınç",
+            "Madde ve Endüstri",
+            "Basit Makineler",
+            "Enerji Dönüşümleri ve Çevre Bilimi",
+            "Elektrik Yükleri ve Elektrik Devreleri"
+        ],
+        "T.C İnkılap Tarihi ve Atatürkçilik": [
+            "Bir Kahraman Doğuyor",
+            "Milli Uyanış: Bağımsızlık Yolunda Atılan Adımlar",
+            "Ya İstiklal Ya Ölüm!",
+            "Atatürkçülük ve Çağdaşlaşan Türkiye",
+            "Demokratikleşme Çabaları",
+            "Atatürk Dönemi Türk Dış Politikaları",
+            "Atatürk'ün Ölümü ve Sonrası"
+        ],
+        "Din Kültürü ve Ahlak Bilgisi": [
+            "Kader İnancı",
+            "Zekat ve Sadaka",
+            "Din ve Hayat",
+            "Hz. Muhammed(s.a.v) Örnekliği",
+            "Kur'an-ı Kerim ve Özellikleri"
+        ],
+        "Yabancı Dil": [
+            "Friendships",
+            "Teen Life",
+            "In The Kitchen",
+            "On The Phone",
+            "The Internet",
+            "Adventures",
+            "Tourism",
+            "Chores",
+            "Science",
+            "Natural Forces"
+        ]
+    },
+    "9": {
+        "Tarih": [],
+        "Türk Dili ve Edebiyat": [],
+        "Matematik": [],
+        "Fizik": [],
+        "Kimya": [],
+        "Biyoloji": [],
+        "Çoğrafya": [],
+        "İngilizce": [],
+        "Almanca": [],
+        "Din Kültürü ve Ahlak Bilgisi": []
+    },
+    "10": {},
+    "11": {},
+    "12": {}
+}
